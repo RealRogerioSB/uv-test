@@ -8,7 +8,7 @@ while True:
     nome = input("Digite seu nome (para encerrar basta dar ENTER: ")
 
     if nome:
-        print(f"Olá, {nome}! Seja-bem-vindo(a)!")
+        print(f"Olá, {nome}! Seja bem-vindo(a)!")
         time.sleep(1)
     else:
         print("Que pena... Tchau!")

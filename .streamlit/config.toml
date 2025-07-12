@@ -1,0 +1,75 @@
+[global]
+disableWidgetStateDuplicationWarning = false
+showWarningOnDirectExecution = true
+
+#[logger]
+#level = "info"
+#messageFormat = "%(asctime)s %(message)s"
+
+[theme]
+base = "light"
+primaryColor = "orange"
+backgroundColor = "mintcream"
+textColor = "dark"
+secondaryBackgroundColor = "lightcyan"
+linkColor = "awesome"
+codeBackgroundColor = "whitegrey"
+font = "sans-serif"  # serif, sans-serif, monospace, cursive, fantasy
+codeFont = "monospace"
+headingFont = "sans-serif"
+showWidgetBorder = false
+borderColor = "whitegray"
+baseFontSize = 16
+showSidebarBorder = true
+baseRadius = "small"  # none, small, medium, large, full
+
+#[[theme.fontFaces]]
+#family = "JetBrains Mono"
+#url = "https://fonts.cdnfonts.com/css/jetbrains-mono"
+#weight = 400
+#style = "normal"
+
+[theme.sidebar]
+primaryColor = "steelblue"
+backgroundColor = "yellow"
+textColor = "blue"
+secondaryBackgroundColor = "white"
+linkColor = "yellow"
+codeBackgroundColor = "gray"
+font = "sans-serif"  # serif, sans-serif, monospace, cursive, fantasy
+codeFont = "monospace"
+headingFont = "sans-serif"
+showWidgetBorder = false
+borderColor = "gray"
+baseRadius = "small"  # none, small, medium, large, full
+
+[client]
+showErrorDetails = "full"
+toolbarMode = "auto"
+showSidebarNavigation = false
+
+[runner]
+magicEnabled = true
+fastReruns = true
+enforceSerializableSessionState = false
+enumCoercion = "nameOnly"
+
+[server]
+folderWatchBlacklist = []
+fileWatcherType = "watchdog"
+cookieSecret = "a-random-key-appears-here"
+headless = false
+runOnSave = false
+port = 8501
+baseUrlPath = ""
+enableCORS = true
+maxUploadSize = 1000
+maxMessageSize = 1000
+enableWebsocketCompression = false
+enableStaticServing = false
+disconnectedSessionTTL = 120
+
+#[browser]
+#serverAddress = "newtwork"
+#gatherUsageStats = false
+#serverPort = 8501

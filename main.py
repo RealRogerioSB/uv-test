@@ -1,9 +1,8 @@
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+def send_email(subject: str, body: str, sender: str, password: str, recipients: list[str]) -> None:
+    import smtplib
+    from email.mime.multipart import MIMEMultipart
+    from email.mime.text import MIMEText
 
-
-def send_email(subject, body: str, sender: str, password: str, recipients: list[str]) -> None:
     msg: MIMEMultipart = MIMEMultipart()
     msg["From"] = sender
     msg["To"] = ", ".join(recipients)

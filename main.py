@@ -1,7 +1,6 @@
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from smtplib import (SMTP, SMTPAuthenticationError, SMTPConnectError,
-                     SMTPException, SMTPServerDisconnected)
 
 
 def send_email(subject, body: str, sender: str, password: str, recipients: list[str]) -> None:
@@ -11,16 +10,16 @@ def send_email(subject, body: str, sender: str, password: str, recipients: list[
     msg["Subject"] = subject
     msg.attach(MIMEText(body, "plain"))
 
-    with SMTP("smtp.gmail.com", 587) as smtp_server:
+    with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp_server:
         smtp_server.starttls()
         smtp_server.login(sender, password)
         try:
-            smtp_server.sendmail(sender, recipients, msg.as_string())
-        except SMTPAuthenticationError:
+            smtp_server.send_message(msg)
+        except smtplib.SMTPAuthenticationError:
             print("Erro de autenticação com o servidor SMTP.")
-        except (SMTPConnectError, SMTPServerDisconnected):
+        except (smtplib.SMTPConnectError, smtplib.SMTPServerDisconnected):
             print("Erro/falha de conexão com o servidor SMTP.")
-        except SMTPException as e:
+        except smtplib.SMTPException as e:
             print(f"Erro de exceção desconhecida: {e}")
         else:
             print("E-mail enviado con sucesso!")
